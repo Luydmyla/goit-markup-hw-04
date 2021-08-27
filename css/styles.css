@@ -76,7 +76,7 @@ img {
   display: inline-block;
   font-family: "Raleway", sans-serif;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 700px;
   font-size: 26px;
   line-height: 1.19;
   letter-spacing: 0.03em;
@@ -179,6 +179,21 @@ img {
   text-align: center;
   padding-top: 200px;
   padding-bottom: 200px;
+  height: 600px;
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+
+  background-image: linear-gradient(
+      to right,
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(../images/fon-hero.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  /* outline: 1px solid black; */
 }
 .hero-title {
   font-weight: 900;
@@ -193,7 +208,7 @@ img {
 /* кнопка заказать услугу */
 .button-hero {
   font-family: "Roboto", sans-serif;
-  font-weight: 400;
+  font-weight: 700;
   font-size: 16px;
   line-height: 1.87;
   display: flex;
@@ -214,7 +229,15 @@ img {
   background-color: #188ce8;
   color: var(--second-text-color);
 }
-
+/* -----OVERLYA----- */
+/* .overlay {
+  height: 600px;
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: url(../images/fon-hero.jpg);
+  outline: 1px solid black;
+} */
 /* sections */
 
 .sections-feature,
@@ -234,6 +257,34 @@ img {
 .feature-item:last-child {
   margin-right: 0;
 }
+/* -----ИКОНКИ ПЕРЕД СЕКЦИЕЙ ПРЕИМУЩЕСТВА */
+.feature-item::before {
+  display: block;
+  content: "";
+  height: 120px;
+  background-size: 70px;
+  /* background-size: contain; */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: var(--second-background-color);
+  border-radius: 4px;
+  margin-bottom: 30px;
+}
+.icon-antenna::before {
+  background-image: url("../images/antenna.png");
+}
+.icon-clock::before {
+  background-image: url("../images/clock.png");
+}
+
+.icon-diagram::before {
+  background-image: url("../images/diagram.png");
+}
+
+.icon-astronaut::before {
+  background-image: url("../images/astronaut.png");
+}
+
 /* заголовки второго уровня */
 .sections-title-second {
   font-weight: 700;
