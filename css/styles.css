@@ -274,7 +274,7 @@ img {
 .feature-item:last-child {
   margin-right: 0;
 }
-/* -----ИКОНКИ ПЕРЕД СЕКЦИЕЙ ПРЕИМУЩЕСТВА через backgroumd */
+/* -----ИКОНКИ ПЕРЕД СЕКЦИЕЙ ПРЕИМУЩЕСТВА через backgroumd и befor */
 /* .feature-item::before {
   display: block;
   content: "";
@@ -302,14 +302,24 @@ img {
   background-image: url("../images/astronaut.");
 } */
 
-/*  ------ИКОНКИ ПЕРЕД СЕКЦИЕЙ ПРЕИМУЖЕСТВА ЧЕРЕЗ ИНЛАЙН СВГ */
-.icon-feature {
-  display: block;
+/*  ------ИКОНКИ ПЕРЕД СЕКЦИЕЙ ПРЕИМУЖЕСТВА ЧЕРЕЗ ИНЛАЙН СВГ----- */
+.feature-item-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 270px;
   height: 120px;
   background-color: var(--second-background-color);
   margin-bottom: 30px;
-  padding: 25px 100px;
+}
+
+.icon-feature {
+  display: block;
+  /* width: 270px;
+  height: 120px;
+  background-color: var(--second-background-color);
+  margin-bottom: 30px;
+  padding: 25px 100px; */
 }
 
 /* заголовки второго уровня */
