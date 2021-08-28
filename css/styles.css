@@ -16,6 +16,9 @@ html {
   --second-background-color: #f5f4fa;
   --background-color: #ffffff;
   --second-text-color: #ffffff;
+  --socials-icon-color-first: #afb1b8;
+  --socials-icon-color-second: rgba(255, 255, 255, 0.1);
+  --border-color: #eeeeee;
 }
 body {
   font-family: "Roboto", sans-serif;
@@ -76,7 +79,7 @@ img {
   display: inline-block;
   font-family: "Raleway", sans-serif;
   font-style: normal;
-  font-weight: 700px;
+  font-weight: 700;
   font-size: 26px;
   line-height: 1.19;
   letter-spacing: 0.03em;
@@ -132,6 +135,23 @@ img {
 .site-item:not(:last-child) {
   margin-right: 50px;
 }
+/* ----ИКОНКИ ПЕРЕД ПОЧТОЙ И ТЕЛЕФОНОМ */
+.auth-item {
+  display: flex;
+}
+.icon-envelope,
+.icon-smartphone {
+  fill: var(--primary-text-color);
+  margin-right: 10px;
+}
+
+.auth-navig .link:hover .icon-envelope,
+.auth-navig .link:hover .icon-smartphone,
+.auth-navig .link:focus .icon-envelope,
+.auth-navig .link:focus .icon-smartphone {
+  fill: var(--accent-color);
+}
+
 .auth-navig {
   display: flex;
   margin-left: auto;
@@ -196,7 +216,7 @@ img {
   /* outline: 1px solid black; */
 }
 .hero-title {
-  font-weight: 900px;
+  font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
   text-align: center;
@@ -208,7 +228,7 @@ img {
 /* кнопка заказать услугу */
 .button-hero {
   font-family: "Roboto", sans-serif;
-  font-weight: 700px;
+  font-weight: 700;
   font-size: 16px;
   line-height: 1.87;
   display: flex;
@@ -229,20 +249,12 @@ img {
   background-color: #188ce8;
   color: var(--second-text-color);
 }
-/* -----OVERLYA----- */
-/* .overlay {
-  height: 600px;
-  max-width: 1600px;
-  margin-left: auto;
-  margin-right: auto;
-  background-image: url(../images/fon-hero.jpg);
-  outline: 1px solid black;
-} */
-/* sections */
 
+/*-------- sections--------- */
 .sections-feature,
 .sections-work,
-.sections-team {
+.sections-team,
+.sections-clients {
   padding-top: 94px;
   padding-bottom: 94px;
 }
@@ -257,13 +269,13 @@ img {
 .feature-item:last-child {
   margin-right: 0;
 }
-/* -----ИКОНКИ ПЕРЕД СЕКЦИЕЙ ПРЕИМУЩЕСТВА */
-.feature-item::before {
+/* -----ИКОНКИ ПЕРЕД СЕКЦИЕЙ ПРЕИМУЩЕСТВА через backgroumd */
+/* .feature-item::before {
   display: block;
   content: "";
   height: 120px;
   background-size: 70px;
-  /* background-size: contain; */
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   background-color: var(--second-background-color);
@@ -271,23 +283,33 @@ img {
   margin-bottom: 30px;
 }
 .icon-antenna::before {
-  background-image: url("../images/antenna.png");
+  background-image: url("../images/antenna.svg");
 }
 .icon-clock::before {
-  background-image: url("../images/clock.png");
+  background-image: url("../images/clock.svg");
 }
 
 .icon-diagram::before {
-  background-image: url("../images/diagram.png");
+  background-image: url("../images/diagram.svg");
 }
 
 .icon-astronaut::before {
-  background-image: url("../images/astronaut.png");
+  background-image: url("../images/astronaut.");
+} */
+
+/*  ------ИКОНКИ ПЕРЕД СЕКЦИЕЙ ПРЕИМУЖЕСТВА ЧЕРЕЗ ИНЛАЙН СВГ */
+.icon-feature {
+  display: block;
+  width: 270px;
+  height: 120px;
+  background-color: var(--second-background-color);
+  margin-bottom: 30px;
+  padding: 25px 100px;
 }
 
 /* заголовки второго уровня */
 .sections-title-second {
-  font-weight: 700px;
+  font-weight: 700;
   font-size: 36px;
   line-height: 1.16;
   text-align: center;
@@ -298,7 +320,7 @@ img {
 
 /* заголовки в  секции особенности */
 .sections-title-feature {
-  font-weight: 700px;
+  font-weight: 700;
   font-size: 14px;
   line-height: 1.17;
   letter-spacing: 0.03em;
@@ -337,19 +359,13 @@ img {
   padding-bottom: 30px;
 }
 .sections-title-team {
-  font-weight: 500px;
+  font-weight: 500;
   font-size: 16px;
   line-height: 1.18;
   text-align: center;
   letter-spacing: 0.03em;
   color: var(--title-text-color);
   margin-bottom: 10px;
-}
-.team-footer p {
-  font-size: 16px;
-  line-height: 1.18;
-  text-align: center;
-  letter-spacing: 0.03em;
 }
 .team-card {
   width: 270px;
@@ -364,6 +380,76 @@ img {
   margin-right: 0;
 }
 
+.team-footer p {
+  font-size: 16px;
+  line-height: 1.18;
+  text-align: center;
+  letter-spacing: 0.03em;
+  margin-bottom: 16px;
+}
+.socials-item {
+  width: 44px;
+  height: 44px;
+}
+.socials-link {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--background-color);
+}
+.socials-list {
+  display: flex;
+  justify-content: center;
+}
+.socials-item:not(:last-child) {
+  margin-right: 10px;
+}
+.socials-icon {
+  fill: var(--socials-icon-color-first);
+}
+.socials-link:hover,
+.socials-link:focus,
+.socials-link:hover .socials-icon,
+.socials-link:focus .socials-icon {
+  background-color: var(--accent-color);
+  fill: var(--background-color);
+}
+
+/* -----СЕКЦИЯ ПОСТОЯННЫЕ КЛИЕНТЫ----- */
+.clients-list {
+  display: flex;
+  justify-content: center;
+}
+.clients-link {
+  width: 170px;
+  height: 92px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--socials-icon-color-first);
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 16px 32px;
+  background-color: var(--background-color);
+}
+.clients-icon {
+  fill: var(--socials-icon-color-first);
+}
+
+.clients-link:hover,
+.clients-link:focus,
+.clients-link:hover .clients-icon,
+.clients-link:focus .clients-icon {
+  border-color: var(--accent-color);
+  fill: var(--accent-color);
+}
+.clients-item:not(:last-child) {
+  margin-right: 30px;
+}
+
 /* футер */
 .footer {
   background-color: #2f303a;
@@ -375,7 +461,7 @@ img {
   display: inline-block;
   font-family: "Raleway", sans-serif;
   font-style: normal;
-  font-weight: 700px;
+  font-weight: 700;
   font-size: 26px;
   line-height: 1.19;
   letter-spacing: 0.03em;
@@ -412,7 +498,56 @@ address {
 .footer-navig .link:focus {
   color: var(--accent-color);
 }
+/* -----СОЦ ССЫЛКИ В ФУТЕРЕ */
+.sections-footer-title {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--second-text-color);
+  margin-bottom: 20px;
+}
 
+.socials-footer-list {
+  display: flex;
+  justify-content: center;
+}
+.socials-item:not(:last-child) {
+  margin-right: 10px;
+}
+.socials-icon {
+  fill: var(--socials-icon-color-first);
+}
+.socials-link {
+  background-color: var(--socials-icon-color-second);
+}
+.socials-footer-icon {
+  fill: var(--second-text-color);
+}
+.socials-link:hover,
+.socials-link:focus,
+.socials-link:hover .socials-icon,
+.socials-link:focus .socials-icon {
+  background-color: var(--accent-color);
+  fill: var(--background-color);
+}
+.footer-container {
+  display: flex;
+  align-items: flex-start;
+}
+.footer-address {
+  display: block;
+  width: 231px;
+  height: 132px;
+  margin-right: 70px;
+}
+.footer-socials-link {
+  display: block;
+  width: 206px;
+  height: 80px;
+  margin-top: 12px;
+}
 /* стили для страницы портфолио */
 /* секция меню */
 .sections-title {
@@ -425,7 +560,7 @@ address {
   margin-bottom: 50px;
 }
 .filters-item button {
-  font-weight: 500px;
+  font-weight: 500;
   font-size: 16px;
   line-height: 1.62;
   text-align: center;
@@ -469,7 +604,9 @@ address {
   width: 370px;
   margin-bottom: 30px;
   margin-right: 30px;
-  border: 1px solid #eeeeee;
+  box-sizing: border-box;
+  border: 1px solid var(--border-color);
+  background: var(--background-color);
 }
 .project-item:nth-child(3n) {
   margin-right: 0;
@@ -478,8 +615,12 @@ address {
 .project-item:nth-last-child(-n + 3) {
   margin-bottom: 0;
 }
+.project-item:hover {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
 .project-title {
-  font-weight: 700px;
+  font-weight: 700;
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
@@ -493,8 +634,8 @@ address {
 }
 .project-footer {
   padding: 20px 24px;
-  border-left: 1px solid #eeeeee;
-  border-right: 1px solid #eeeeee;
-  border-bottom: 1px solid #eeeeee;
+  border-left: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
   box-sizing: border-box;
 }
